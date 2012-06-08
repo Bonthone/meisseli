@@ -10,7 +10,7 @@ Asenna Ruby
 
 terminaalissa, aja `gem install bundler`
 
-asenna tarvittavat gemit: `bundle install`
+asenna tarvittavat gemit ja jätä pois: `bundle install --without production`
 
 käynnistä palvelin paikallisesti: `rackup`
 
