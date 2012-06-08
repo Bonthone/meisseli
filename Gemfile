@@ -6,5 +6,5 @@ group :development, :test do
 end
 
 group :production do
-	gem 'pg', '0.10.0'
+	gem 'pg', '0.10.0' # this gem is required to use postgresql in heroku
 end
