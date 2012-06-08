@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 gem 'sinatra', :require => 'sinatra/base'
+gem 'data_mapper'
 
 group :development, :test do 
 	gem 'sqlite3'
