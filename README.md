@@ -14,4 +14,15 @@ asenna tarvittavat gemit: `bundle install`
 
 käynnistä palvelin paikallisesti: `rackup`
 
-palvelin löytyy tod.näk. osoitteesta http://localhost:9292
+palvelin löytyy tod.näk. osoitteesta [http://localhost:9292](http://localhost:9292)
+
+Heroku
+======
+
+[Luo Heroku-tili](http://www.heroku.com/)
+
+Kirjaudu: `heroku login`
+
+Lisää heroku toisena remotena gitiin: `git remote add heroku git@heroku.com:meisseli.git`
+
+Kun haluat työntää master-branchia Herokuun, käytä `git push heroku master`
