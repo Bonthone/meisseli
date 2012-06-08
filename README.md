@@ -26,3 +26,5 @@ Kirjaudu: `heroku login`
 Lisää heroku toisena remotena gitiin: `git remote add heroku git@heroku.com:meisseli.git`
 
 Kun haluat työntää master-branchia Herokuun, käytä `git push heroku master`
+
+Serveri löytyy tällä hetkellä osoitteesta [http://meisseli.herokuapp.com/](http://meisseli.herokuapp.com/)
