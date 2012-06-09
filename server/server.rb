@@ -5,19 +5,27 @@ class Meisseli < Sinatra::Base
 	# These serve pages
 
 	get '/' do
+		#servaa index.html
 		send_file File.expand_path('index.html', settings.public_folder)
 	end
 
+	get '/signin' do
+		#servaa signin.html
+	end
+
 	get '/view/:url' do
+		#servaa view.html
 		User.find(:first).to_json()
 	end
 
 	get '/edit/:url' do |url|
+		#servaa edit.html
 		User.find(:all, :conditions => {:url => url}, 
 			:select => "user_id, url").to_json()  
 	end
 
-	# These serve json
+	# These serve json == REST API
+
 	get '/pageservices/:page_id' do |page_id|
 		PageService.find(:page_id => page_id, 
 			:select => "service_id, user_name_in_service").to_json()
