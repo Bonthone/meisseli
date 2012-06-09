@@ -6,20 +6,19 @@ class Meisseli < Sinatra::Base
 
 	get '/' do
 		#servaa index.html
-		send_file File.expand_path('index.html', settings.public_folder)
+		haml :index, :layout => :layout
 	end
 
-	get '/signin' do
-		#servaa signin.html
+	get '/signup' do
+		haml :signup, :layout => :layout
 	end
 
-	get '/view/:url' do
-		#servaa view.html
+	get '/view/:url' do |url|
+		haml :view, :layout => :layout
 	end
 
 	get '/edit/:url' do |url|
-		#servaa edit.html
-		"Editing #{session[:user_id]}" 
+		haml :edit, :layout => :layout
 	end
 
 	# These serve json == REST API
