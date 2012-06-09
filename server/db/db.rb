@@ -3,7 +3,7 @@ class Meisseli < Sinatra::Base
 	# Get DB settings depending on environment
 	# Use DATABASE_URL if available, otherwise look for config/database.yml
 	if(ENV["DATABASE_URL"])
-		ActiveRecord::Base.establish_connection(ENV["DATABASE_URL"], :adapter => "mysql2")
+		ActiveRecord::Base.establish_connection(:adapter => "mysql2")
 	else
 		YAML::load(File.open('config/database.yml'))[ENV["RACK_ENV"]].symbolize_keys.each do |key, value|
 		  set key, value
