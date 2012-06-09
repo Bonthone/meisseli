@@ -3,5 +3,5 @@ require 'bundler'
 
 Bundler.require(:default, :production)
 
-require './server.rb'
+require './server/server.rb'
 run Meisseli
