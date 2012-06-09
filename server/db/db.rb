@@ -17,7 +17,7 @@ class Meisseli < Sinatra::Base
 
 	class User < ActiveRecord::Base
 		def self.get(id)
-			where(:id => id).first
+			where(:user_id => id).first
 		end
 
 		def self.authenticate(params)

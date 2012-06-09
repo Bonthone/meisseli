@@ -3,7 +3,8 @@ class Meisseli < Sinatra::Base
 	# These serve pages
 
 	get '/' do
-		"Hello world, it's #{Time.now} at the server!"
+		"Hello world, it's #{Time.now} at the server!" + 
+		(session[:user_id] == nil ? "You're anonymous" : "You're logged in as #{User.get(session[:user_id]).user_id}")
 	end
 
 	get '/view/:url' do
@@ -12,7 +13,7 @@ class Meisseli < Sinatra::Base
 
 	get '/edit/:url' do |url|
 		User.find(:all, :conditions => {:url => url}, 
-			:select => "id, url").to_json()  
+			:select => "user_id, url").to_json()  
 	end
 
 	# These serve json
