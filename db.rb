@@ -7,38 +7,24 @@ class Meisseli < Sinatra::Base
 	  set key, value
 	end
 
-	class MyAPI < ActiveRecord::Base
-		class << self
+	ActiveRecord::Base.establish_connection(	
+		:adapter => "mysql2", 
+		:host => Meisseli.settings.db_host,
+		:database => Meisseli.settings.db_name,
+		:username => Meisseli.settings.db_username,
+		:password => Meisseli.settings.db_password
+	)
 
-			# Connect to database
-			ActiveRecord::Base.establish_connection(
-			{
-			  :adapter => "mysql2", 
-			  :host => Meisseli.settings.db_host,
-			  :database => Meisseli.settings.db_name,
-			  :username => Meisseli.settings.db_username,
-			  :password => Meisseli.settings.db_password
-			})
-
-			def get_users()
-				query = 'select * from tblUser';
-				self.connection.select_all(query).to_json
-			end
-
-			def get_services_by_url(user_url)
-				url = ActiveRecord::Base.connection.quote(user_url)
-				p user_url
-				p url
-
-				query = 'SELECT relation.palvelu_id, palv.nimi AS palvelu_nimi, palv.url AS palv_url, relation.user_name_palvelussa
-					FROM tblSivujen_Palvelut relation
-					INNER JOIN tblSivu sivu
-					ON sivu.url = #{url} AND sivu.id = relation.user_id 
-					INNER JOIN tblPalvelu palv
-					ON palv.id = relation.palvelu_id'
-				self.connection.select_all(query).to_json
-			end
-
-		end
+	class User < ActiveRecord::Base
 	end
+
+	class Page < ActiveRecord::Base
+	end
+
+	class PageService < ActiveRecord::Base
+	end
+
+	class Service < ActiveRecord::Base
+ 	end
+
 end

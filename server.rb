@@ -5,11 +5,11 @@ class Meisseli < Sinatra::Base
 		"Hello world, it's #{Time.now} at the server!"
 	end
 
-	get '/users/' do
-		MyAPI.get_users()
+	get '/view/:url' do
+		User.find(:first).to_json()
 	end
 
-	get '/user/:name' do
-		MyAPI.get_services_by_url( params[:name] )
+	get '/edit/:url' do |url|
+		User.where(:url => url).first.to_json()  
 	end
 end
