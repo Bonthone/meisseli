@@ -13,11 +13,11 @@ define([
       var view = new IndexView().render();
       $('#index').html(view.el);
     }
-    if ($('#signin').length != 0) {
+    if ($('#signup').length != 0) {
       var view = new SignUpView().render();
       $('#signup').html(view.el);
     }
-    if ($('').length != 0) {
+    if ($('#view').length != 0) {
       var view = new ViewingView().render();
       $('#view').html(view.el);
     }
