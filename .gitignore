@@ -19,3 +19,6 @@ doc/
 
 # bundler
 Gemfile.lock
+
+# dont push database configs
+config/database.yml

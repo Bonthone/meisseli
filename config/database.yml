@@ -1,7 +1,7 @@
 development:
     db_host: localhost
-    db_username: dibs
-    db_password: peruna
+    db_username: root
+    db_password:
     db_name: dibs
 
 production:
