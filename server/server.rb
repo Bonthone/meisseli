@@ -21,6 +21,14 @@ class Meisseli < Sinatra::Base
 		haml :edit, :layout => :layout
 	end
 
+	get '/templates.html' do
+		haml :templates, :layout => :empty
+	end
+
+	get '/:name' do |name|
+		haml :user, :layout => :layout, :locals => {:name => name}
+	end
+
 	# These serve json == REST API
 
 	get '/pageservices/:page_id' do |page_id|
@@ -34,9 +42,5 @@ class Meisseli < Sinatra::Base
 
 	get '/page/:page_id' do |page_id|
 		Page.where(:page_id => page_id).to_json()
-	end
-
-	get '/:name' do |name|
-		haml :user, :layout => :layout, :locals => {:name => name}
 	end
 end

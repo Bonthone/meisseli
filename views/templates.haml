@@ -1,18 +1,35 @@
 %script{ :id => "github", :type => "text/x-handlebars-template" }
-  #githubTemplate
-    %header {{username}}
-    
-    .gravatar
-      %img{:src => '{{gravatar_src}}'}
-    
-    .followers
-      %p.dataTitle Followers
-      %p.data {{followers_count}}
-    .following 
-      %p.dataTitle Following
-      %p.data {{following_count}}
-          
-          
-    .repoCount 
-      %p.dataTitle Repo Count
-      %p.data {{public_repo_count}}
+  %header {{username}}
+  
+  .gravatar
+    %img{:src => '{{gravatar_src}}'}
+  
+  .followers
+    %p.dataTitle Followers
+    %p.data {{followers_count}}
+  .following 
+    %p.dataTitle Following
+    %p.data {{following_count}}
+        
+  .repoCount 
+    %p.dataTitle Repo Count
+    %p.data {{public_repo_count}}
+
+%script{ :id => "twitter", :type => "text/x-handlebars-template" }
+  %header @{{screen_name}}
+
+  .followers
+    %p.dataTitle Followers
+    %p.data {{followers_count}}
+
+  .listed 
+    %p.dataTitle Listed
+    %p.data {{listed_count}}
+        
+  .statuses 
+    %p.dataTitle Status Count
+    %p.data {{statuses_count}}
+
+  .retweeted 
+    %p.dataTitle Retweet Count
+    %p.data {{retweet_count}}

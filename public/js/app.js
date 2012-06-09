@@ -2,11 +2,12 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
+	'handlebars',
   'views/index',
   'views/signup',
   'views/view',
   'views/edit'
-], function($, _, Backbone, IndexView, SignUpView, ViewingView, EditView) {
+], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView) {
 
 	var initialize = function() {
     if ($('#index').length != 0) {
