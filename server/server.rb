@@ -1,6 +1,6 @@
 class Meisseli < Sinatra::Base
 
-	set :public_folder, File.expand_path(Dir.pwd) + '/public'
+	set :root, File.expand_path(Dir.pwd)
 
 	# These serve pages
 
@@ -37,5 +37,9 @@ class Meisseli < Sinatra::Base
 
 	get '/page/:page_id' do |page_id|
 		Page.where(:page_id => page_id).to_json()
+	end
+
+	get '/:name' do |name|
+		haml :user, :layout => :layout, :locals => {:name => name}
 	end
 end
