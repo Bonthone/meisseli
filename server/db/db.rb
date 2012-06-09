@@ -16,6 +16,13 @@ class Meisseli < Sinatra::Base
 	)
 
 	class User < ActiveRecord::Base
+		def self.get(id)
+			where(:id => id).first
+		end
+
+		def self.authenticate(params)
+			where(:url => params[:url], :password => params[:password]).first
+		end
 	end
 
 	class Page < ActiveRecord::Base
