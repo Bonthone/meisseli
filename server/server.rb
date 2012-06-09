@@ -1,9 +1,11 @@
 class Meisseli < Sinatra::Base
 
+	set :public_folder, File.expand_path(Dir.pwd) + '/public'
+
 	# These serve pages
 
 	get '/' do
-		"Hello world, it's #{Time.now} at the server!"
+		send_file File.expand_path('index.html', settings.public_folder)
 	end
 
 	get '/view/:url' do
