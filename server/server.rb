@@ -1,6 +1,6 @@
 class Meisseli < Sinatra::Base
 
-	set :root, File.expand_path(Dir.pwd)
+	set :root, File.expand_path('.')
 
 	# These serve pages
 
