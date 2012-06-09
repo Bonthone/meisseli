@@ -26,7 +26,8 @@ class Meisseli < Sinatra::Base
 
   get "/login" do
     session[:user_id] = User.authenticate(params).id #THIS HAS TO BE A LOT MORE COMPLICATED
-    redirect '/protected'
+    @user = User.get(session[:user_id])
+    "Login as #{@user.id}"
   end
 
   get "/logout" do
