@@ -1,0 +1,11 @@
+development:
+    db_host: localhost
+    db_username: dibs
+    db_password: peruna
+    db_name: dibs
+
+production:
+    db_host: us-cdbr-east.cleardb.com
+    db_username: ad56145265828d
+    db_password: 8b97f200
+    db_database: heroku_f3199d24cd86b48
