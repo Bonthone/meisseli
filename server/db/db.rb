@@ -1,19 +1,22 @@
 class Meisseli < Sinatra::Base
 
 	# Get DB settings depending on environment
-	env = ENV["RACK_ENV"]
+	# Use DATABASE_URL if available, otherwise look for config/database.yml
+	if(ENV["DATABASE_URL"])
+		ActiveRecord::Base.establish_connection(ENV["DATABASE_URL"])
+	else
+		YAML::load(File.open('config/database.yml'))[ENV["RACK_ENV"]].symbolize_keys.each do |key, value|
+		  set key, value
+		end
 
-	YAML::load(File.open('config/database.yml'))[env].symbolize_keys.each do |key, value|
-	  set key, value
+		ActiveRecord::Base.establish_connection(	
+			:adapter => "mysql2", 
+			:host => Meisseli.settings.db_host,
+			:database => Meisseli.settings.db_name,
+			:username => Meisseli.settings.db_username,
+			:password => Meisseli.settings.db_password
+		)
 	end
-
-	ActiveRecord::Base.establish_connection(	
-		:adapter => "mysql2", 
-		:host => Meisseli.settings.db_host,
-		:database => Meisseli.settings.db_name,
-		:username => Meisseli.settings.db_username,
-		:password => Meisseli.settings.db_password
-	)
 
 	class User < ActiveRecord::Base
 		def self.get(id)
