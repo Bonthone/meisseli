@@ -14,7 +14,7 @@ class Meisseli < Sinatra::Base
 
 	get '/edit/:url' do |url|
 		User.find(:all, :conditions => {:url => url}, 
-			:select => "id, url").to_json()  
+			:select => "user_id, url").to_json()  
 	end
 
 	# These serve json
