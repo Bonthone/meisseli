@@ -13,6 +13,7 @@ require.config({
 		underscore: 'libs/underscore/underscore',
 		backbone: 'libs/backbone/backbone',
 		handlebars: 'libs/handlebars/handlebars'
+		text: 'libs/text/text'
 	}
 });
 
