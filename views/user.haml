@@ -1,1 +1,6 @@
-%h2= "Hello #{locals[:name]}"
+%h1= "#{locals[:name]}"
+#user
+  - 3.times do
+    .row
+      - 3.times do
+        .tile.span4.ui-widget-shadow
