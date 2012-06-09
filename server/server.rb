@@ -15,13 +15,11 @@ class Meisseli < Sinatra::Base
 
 	get '/view/:url' do
 		#servaa view.html
-		User.find(:first).to_json()
 	end
 
 	get '/edit/:url' do |url|
 		#servaa edit.html
-		User.find(:all, :conditions => {:url => url}, 
-			:select => "user_id, url").to_json()  
+		"Editing #{session[:user_id]}" 
 	end
 
 	# These serve json == REST API
