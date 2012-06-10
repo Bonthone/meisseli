@@ -5,10 +5,14 @@ user_id int not null primary key auto_increment,
 url varchar(255) not null unique,
 password varchar(255) not null);
 
-create table pages(
-page_id int not null primary key auto_increment,
-url varchar(255) not null unique,
-page_name varchar(255));
+CREATE TABLE `pages` (
+  `page_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `page_name` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`page_id`),
+  UNIQUE KEY `url` (`url`)
+)
 
 create table pageservices(
 user_id int,
