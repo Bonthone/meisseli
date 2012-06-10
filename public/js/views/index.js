@@ -30,7 +30,7 @@ var IndexView = Backbone.View.extend({
   },
 
   keittoa: function() {
-    alert("KEITTOA!");
+   window.location = "../signup";
   }
 
 }); 
