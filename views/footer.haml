@@ -4,7 +4,7 @@
       - if !session[:user_id]
         .controls.pull-right
           %button.btn.btn-primary.login
-            = session[:user_id]
+            Login
         .controls.pull-right
           %label{:for => "password"}
             Password
@@ -14,8 +14,10 @@
             Your URL
           %input#url{:type =>"text"}
       -else
-        %controls
-        %p
-          Logged in as
+        .controls.pull-right
+          %span
+            Logged in as 
           %span.label.label-success
-            Username
+            =session[:user_name]
+          %button.btn.btn-primary.logout
+            Logout

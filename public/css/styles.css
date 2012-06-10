@@ -65,3 +65,7 @@ header h1 {
 .controls .login {
 	margin-top: 23px;
 }
+
+.control .logout {
+	margin-bottom: 10px;
+}

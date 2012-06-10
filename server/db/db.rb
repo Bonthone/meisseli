@@ -29,6 +29,12 @@ class Meisseli < Sinatra::Base
 	end
 
 	class Page < ActiveRecord::Base
+		def self.getByUserId(id)
+			where(:user_id => id).first
+		end
+		def self.getByPageId(id)
+			where(:page_id => id).first
+		end
 	end
 
 	class PageService < ActiveRecord::Base

@@ -10,25 +10,26 @@ define([
   'views/twitter',
   'views/github',
   'views/stackoverflow',
-], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, TwitterView, GitHubView, StackOverFlowView) {
+  'views/footer'
+], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, TwitterView, GitHubView, StackOverFlowView, FooterView) {
 
 	var initialize = function() {
-		if ($('#index').length != 0) {
-		  var view = new IndexView({el: $('#index')}).render();
-		}
-		if ($('#signup').length != 0) {
-		  var view = new SignUpView().render();
-		  $('#signup').html(view.el);
-		}
-		if ($('#view').length != 0) {
-		  var view = new ViewingView().render();
-		  $('#view').html(view.el);
-		}
-		if ($('#edit').length != 0) {
-		  var view = new EditView().render();
-		  $('#edit').html(view.el);
-		}
-
+    if ($('#index').length != 0) {
+      var view = new IndexView({el: $('#index')}).render();
+    }
+    if ($('#signup').length != 0) {
+      var view = new SignUpView().render();
+      $('#signup').html(view.el);
+    }
+    if ($('#view').length != 0) {
+      var view = new ViewingView().render();
+      $('#view').html(view.el);
+    }
+    if ($('#edit').length != 0) {
+      var view = new EditView().render();
+      $('#edit').html(view.el);
+    }    
+    new FooterView({el: $('footer')});
 		// Services
 		if ($('.tile.twitter').length != 0) {
 		  var view = new TwitterView().render();
@@ -44,7 +45,7 @@ define([
 		}
 	};
   
-  	return {
-  		initialize: initialize
-  	};
+  return {
+  	initialize: initialize
+  };
 });
