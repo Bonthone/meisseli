@@ -11,10 +11,11 @@ header h1 {
 }
 
 .tile {
-	height: 300px;
+	height: 280px;
 	width: 300px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	padding-top: 20px;
 	position: relative;
 	color: #ddd;
 }
@@ -33,14 +34,14 @@ header h1 {
 }
 
 .tile .row {
-	line-height: 50px;
+	line-height: 70px;
 	vertical-align: middle;
 }
 
 .tile header {
 	position: absolute;
-	bottom:0px;
-	right:0px;
+	bottom:10px;
+	right:10px;
 }
 
 .tile header h1{
@@ -58,6 +59,10 @@ header h1 {
 	font-size: 40px;
 	font-weight: bold;
 	letter-spacing: -1px;
+}
+
+.tile .row.badgenames .dataTitle {
+	text-align: right;
 }
 
 .controls {
