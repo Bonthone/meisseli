@@ -14,11 +14,15 @@ class Meisseli < Sinatra::Base
 	end
 
 	get '/view/:url' do |url|
-		haml :view, :layout => :layout
+		haml :edit, :layout => :layout
 	end
 
 	get '/edit/:url' do |url|
-		haml :edit, :layout => :layout
+		if session[:user_id] == User.getByUrl(url).user_id
+			haml :edit, :layout => :layout
+		else
+			redirect "/view/"+url
+		end
 	end
 
 	get '/templates/*.*' do |template, ext|
