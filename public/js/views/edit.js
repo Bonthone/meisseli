@@ -31,7 +31,7 @@ var EditView = Backbone.View.extend({
 
   addWidget: function(widget) {
     console.log(this.rowCount + " " + this.counter);
-    if (this.counter == 4) {
+    if (this.counter == 3) {
         this.counter = 0;
         this.rowCount++;
     }
