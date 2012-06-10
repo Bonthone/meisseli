@@ -6,7 +6,7 @@ class Meisseli < Sinatra::Base
 
 	get '/' do
 		#servaa index.html
-		haml :index, :layout => :layout
+		haml :index, :layout => :layout, :locals => {:name => "Username"}
 	end
 
 	get '/signup' do

@@ -6,8 +6,9 @@ define([
   'views/index',
   'views/signup',
   'views/view',
-  'views/edit'
-], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView) {
+  'views/edit',
+  'views/footer'
+], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, FooterView) {
 
 	var initialize = function() {
     if ($('#index').length != 0) {
@@ -24,10 +25,11 @@ define([
     if ($('#edit').length != 0) {
       var view = new EditView().render();
       $('#edit').html(view.el);
-    }
+    }    
+    new FooterView({el: $('footer')});
 	};
   
-  	return {
-  		initialize: initialize
-  	};
+  return {
+  	initialize: initialize
+  };
 });
