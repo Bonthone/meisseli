@@ -8,7 +8,7 @@ define([
 
   var template = Handlebars.compile(template_text);
 
-var GithubView = Backbone.View.extend({
+var GitHubView = Backbone.View.extend({
 
   initialize: function() {
     _.bindAll(this, 'render', 'printModel');
@@ -17,17 +17,17 @@ var GithubView = Backbone.View.extend({
   },
 
   render: function() {
-    $(this.el).html(template(this.model));
     return this;
   },
 
   printModel: function() {
+    $(this.el).html(template(this.model.attributes));
     console.log('Github');
-    console.log(this.model);
+    console.log(this.model.attributes);
   }
 
 }); 
 
-return GithubView;
+return GitHubView;
 
 });

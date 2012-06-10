@@ -9,7 +9,7 @@ define([
   'views/edit',
   'views/twitter',
   'views/github'
-], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, TwitterView, GithubView) {
+], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, TwitterView, GitHubView) {
 
 	var initialize = function() {
 		if ($('#index').length != 0) {
@@ -30,14 +30,16 @@ define([
 
 		// Services
 		if ($('.tile.twitter').length != 0) {
-			console.log('tweet!')
 		  var view = new TwitterView().render();
 		  $('.tile.twitter .content').html(view.el);
 		}
 		if ($('.tile.github').length != 0) {
-			console.log('git!')
-		  var view = new GithubView().render();
+		  var view = new GitHubView().render();
 		  $('.tile.github .content').html(view.el);
+		}
+		if ($('.tile.stackoverflow').length != 0) {
+		  var view = new StackOverFlowView().render();
+		  $('.tile.stackoverflow .content').html(view.el);
 		}
 	};
   

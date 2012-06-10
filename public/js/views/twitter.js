@@ -17,12 +17,11 @@ var TwitterView = Backbone.View.extend({
   },
 
   render: function() {
-    console.log(this.model.attributes);
-    $(this.el).html(template(this.model.attributes));
     return this;
   },
 
   printModel: function() {
+    $(this.el).html(template(this.model.attributes));
     console.log('TWITTER');
     console.log(this.model.attributes);
   }
