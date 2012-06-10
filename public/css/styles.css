@@ -37,5 +37,14 @@ header h1 {
 }
 .content{
 	float:right;
-	width:90%;
+	width:95%;
+}
+.tyhjaatilaa{
+
+	height:350px;
+	width:100%;
+}
+.pienityhja{
+	height:30px;
+	width:100%;
 }
