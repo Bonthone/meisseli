@@ -31,7 +31,7 @@ header h1 {
 	height:300px;
 }
 
-.tile .row p {
+.tile .row {
 	line-height: 50px;
 	vertical-align: middle;
 }

@@ -1,0 +1,23 @@
+{{#with items.[0]}}
+.row.reputation
+  .span2.data {{reputation}}
+  .span2.dataTitle Reputation
+
+.row.following
+  .span2.data {{accept_rate}}
+  .span2.dataTitle Accept rate
+
+.row.badgenames
+  .span1.dataTitle gold
+  .span1.dataTitle silver
+  .span1.dataTitle bronze     
+.row.badges 
+  .span1.data {{badge_counts.gold}}
+  .span1.data {{badge_counts.silver}}
+  .span1.data {{badge_counts.bronze}}
+
+%header
+  %h1
+    %a{:href => '{{link}}'}
+      {{display_name}}
+{{/with}}

@@ -47,7 +47,7 @@ function($, _, Backbone) {
   var StackOverFlowProfile = Model.extend({
     user_id: '1893',
     url: function() {
-      return 'http://api.stackoverflow.com/1.0/users/'+this.user_id;
+      return 'https://api.stackexchange.com/2.0/users/'+this.user_id+'?site=stackoverflow';
     },
     initialize: function(options) {
       _.bindAll(this, 'url');

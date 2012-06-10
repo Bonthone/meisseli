@@ -8,8 +8,9 @@ define([
   'views/view',
   'views/edit',
   'views/twitter',
-  'views/github'
-], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, TwitterView, GitHubView) {
+  'views/github',
+  'views/stackoverflow',
+], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, TwitterView, GitHubView, StackOverFlowView) {
 
 	var initialize = function() {
 		if ($('#index').length != 0) {
