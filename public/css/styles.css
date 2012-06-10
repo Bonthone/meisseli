@@ -10,4 +10,14 @@ header h1 {
 	height: 220px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	position: relative;
+}
+
+.tile img.bg {
+	position: absolute;
+	top:0px;
+	left:0px;
+	opacity: 0.3;
+	-moz-opacity: 0.3;
+	filter:alpha(opacity=3);
 }

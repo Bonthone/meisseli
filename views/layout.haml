@@ -8,10 +8,10 @@
     %script{:src => '/js/libs/require/require.js', :data => {:main => '/js/main'}}
     %script{:src => '/js/libs/handlebars/handlebars.js', :type => 'text/javascript'}
     = haml :templates
-  %body.container
+  %body
     %header
-      %h1 Meisseli
-    #content
+      = haml :header
+    #content.container
       = yield
     %footer
-      %h5 Build it
+      = haml :footer
