@@ -40,6 +40,9 @@ class Meisseli < Sinatra::Base
 	end
 
 	class PageService < ActiveRecord::Base
+		def self.getByPageId(page_id)
+			where(:page_id => page_id)
+		end
 	end
 
 	class Service < ActiveRecord::Base
