@@ -21,7 +21,7 @@ class Meisseli < Sinatra::Base
 		haml :edit, :layout => :layout
 	end
 
-	get '/templates/:name' do |template|
+	get '/templates/*.*' do |template, ext|
 		file = 'templates/' + template
 		begin
 			haml file.to_sym, :layout => :empty
