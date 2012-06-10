@@ -44,9 +44,21 @@ function($, _, Backbone) {
     }
   });
 
+  var StackOverFlowProfile = Model.extend({
+    user_id: '1893',
+    url: function() {
+      return 'http://api.stackoverflow.com/1.0/users/'+this.user_id;
+    },
+    initialize: function(options) {
+      _.bindAll(this, 'url');
+      this.user_id = options.user_id;
+    }
+  });
+
   return {
     TwitterProfile: TwitterProfile,
-    GitHubProfile: GitHubProfile
+    GitHubProfile: GitHubProfile,
+    StackOverFlowProfile: StackOverFlowProfile
   };
 
 });
