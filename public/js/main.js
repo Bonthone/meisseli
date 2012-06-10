@@ -12,7 +12,7 @@ require.config({
 		jquery: 'libs/jquery/jquery',
 		underscore: 'libs/underscore/underscore',
 		backbone: 'libs/backbone/backbone',
-		handlebars: 'libs/handlebars/handlebars'
+		handlebars: 'libs/handlebars/handlebars',
 		text: 'libs/text/text'
 	}
 });

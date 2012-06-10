@@ -1,0 +1,16 @@
+%script{ :id => "github", :type => "text/x-handlebars-template" }
+  %header {{username}}
+  
+  .gravatar
+    %img{:src => '{{gravatar_src}}'}
+  
+  .followers
+    %p.dataTitle Followers
+    %p.data {{followers_count}}
+  .following 
+    %p.dataTitle Following
+    %p.data {{following_count}}
+        
+  .repoCount 
+    %p.dataTitle Repo Count
+    %p.data {{public_repo_count}}

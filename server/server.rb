@@ -21,8 +21,13 @@ class Meisseli < Sinatra::Base
 		haml :edit, :layout => :layout
 	end
 
-	get '/templates.html' do
-		haml :templates, :layout => :empty
+	get '/templates/:name' do |template|
+		file = 'templates/' + template
+		begin
+			haml file.to_sym, :layout => :empty
+		rescue Exception => e
+			404
+		end
 	end
 
 	get '/:name' do |name|
