@@ -10,9 +10,9 @@ define([
 
 var StackOverFlowView = Backbone.View.extend({
 
-  initialize: function() {
+  initialize: function(options) {
     _.bindAll(this, 'render', 'printModel');
-    this.model = new models.StackOverFlowProfile({user_id: '22656'});
+    this.model = new models.StackOverFlowProfile({user_id: options.identifier});
     this.model.fetch({success: this.printModel});
   },
 

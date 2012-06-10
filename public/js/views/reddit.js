@@ -10,9 +10,9 @@ define([
 
 var RedditView = Backbone.View.extend({
 
-  initialize: function() {
+  initialize: function(options) {
     _.bindAll(this, 'render', 'printModel');
-    this.model = new models.RedditProfile({user_name: "nixonrichard"});
+    this.model = new models.RedditProfile({user_name: options.identifier});
     this.model.fetch({success: this.printModel});
   },
 

@@ -10,9 +10,9 @@ define([
 
 var GitHubView = Backbone.View.extend({
 
-  initialize: function() {
+  initialize: function(options) {
     _.bindAll(this, 'render', 'printModel');
-    this.model = new models.GitHubProfile({user_name: "defunkt"});
+    this.model = new models.GitHubProfile({user_name: options.identifier});
     this.model.fetch({success: this.printModel});
   },
 

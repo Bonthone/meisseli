@@ -22,6 +22,8 @@ function($, _, Backbone) {
     }
   });
 
+  var PageService = Backbone.Model;
+
   var TwitterProfile = Model.extend({
     screen_name: 'TwitterAPI',
     url: function() {

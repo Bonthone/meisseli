@@ -1,22 +1,48 @@
 define([
   'jquery',
   'underscore',
-  'backbone'
-], function($, _, Backbone) {
+  'backbone',
+  'views/widget',
+  'text!/templates/row.html'
+], function($, _, Backbone, Widget, rowTemplate) {
 
 var EditView = Backbone.View.extend({
 
+  currentRow: null,
+
   initialize: function() {
-    _.bindAll(this, 'render', 'fetchPageInfo', 'fetchPageServices');
+    _.bindAll(this, 'render', 'addWidget', 'fetchPageInfo', 'fetchPageServices');
     this.on('pageInfoLoaded', this.fetchPageServices, this)
     this.on('pageServicesLoaded', this.render, this)
+    this.widgets = [];
+    this.counter = 0;
+    this.rowCount = 0;
+
     this.fetchPageInfo();
   },
 
   render: function() {
-    console.log('hello');
-    console.log(this.pageServices);
-    return this;
+    var self = this;
+    $.each(this.pageServices,function(foo, service) {
+      var widget = new Widget(service.page_service).render();
+      self.addWidget(widget);
+    })
+  },
+
+  addWidget: function(widget) {
+    console.log(this.rowCount + " " + this.counter);
+    if (this.counter == 4) {
+        this.counter = 0;
+        this.rowCount++;
+    }
+    if (this.counter == 0) {
+      $(this.el).append(rowTemplate);
+      this.currentRow = $(this.el).find('.row')[this.rowCount];
+    }
+    this.widgets.push(widget);
+    console.log(this.currentRow);
+    $(this.currentRow).append(widget.el);
+    this.counter++;
   },
 
   fetchPageInfo: function() {
