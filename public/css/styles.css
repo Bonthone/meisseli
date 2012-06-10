@@ -21,3 +21,11 @@ header h1 {
 	-moz-opacity: 0.3;
 	filter:alpha(opacity=3);
 }
+
+.controls {
+	margin-right: 10px;
+}
+
+.controls .login {
+	margin-top: 23px;
+}

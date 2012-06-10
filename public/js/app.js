@@ -13,8 +13,7 @@ define([
 
 	var initialize = function() {
 		if ($('#index').length != 0) {
-		  var view = new IndexView().render();
-		  $('#index').html(view.el);
+		  var view = new IndexView({el: $('#index')}).render();
 		}
 		if ($('#signup').length != 0) {
 		  var view = new SignUpView().render();
