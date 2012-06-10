@@ -37,15 +37,14 @@ class Meisseli < Sinatra::Base
 	# These serve json == REST API
 
 	get '/pageservices/:page_id' do |page_id|
-		PageService.find(:page_id => page_id, 
-			:select => "service_id, user_name_in_service").to_json()
+		PageService.getByPageId(page_id).to_json()
 	end
 
 	get '/services/:service_id' do |service_id|
 		Service.where(:service_id => service_id).to_json()
 	end
 
-	get '/page/:page_id' do |page_id|
-		Page.where(:page_id => page_id).to_json()
+	get '/page/:url' do |url|
+		Page.where(:url => url).first.to_json()
 	end
 end
