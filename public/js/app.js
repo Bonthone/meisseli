@@ -8,7 +8,7 @@ define([
   'views/view',
   'views/edit',
   'views/twitter',
-  'views/github'
+  'views/github',
   'views/footer'
 ], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, TwitterView, GitHubView, FooterView) {
 
@@ -17,8 +17,7 @@ define([
       var view = new IndexView({el: $('#index')}).render();
     }
     if ($('#signup').length != 0) {
-      var view = new SignUpView().render();
-      $('#signup').html(view.el);
+      var view = new SignUpView({el: $('#signup')}).render();
     }
     if ($('#view').length != 0) {
       var view = new ViewingView().render();

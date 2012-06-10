@@ -22,7 +22,9 @@ class Meisseli < Sinatra::Base
 		def self.get(id)
 			where(:user_id => id).first
 		end
-
+		def self.getByUrl(url)
+			where(:url => url).first
+		end
 		def self.authenticate(params)
 			where(:url => params[:url], :password => params[:password]).first
 		end

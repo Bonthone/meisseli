@@ -23,7 +23,7 @@ define([
       console.log(req);
       var self = this;
       $.ajax({
-        type: "GET",
+        type: "POST",
         url: req,
         dataType: "json",
         success: function(data) {
