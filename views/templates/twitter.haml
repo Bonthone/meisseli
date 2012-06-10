@@ -1,15 +1,13 @@
 .row.followers
-  .span2
-    %p.data {{followers_count}}
-  .span2
-    %p.dataTitle Followers
+  .span2.data {{followers_count}}
+  .span2.dataTitle Followers
 
 
 .row.listed
-  .span2
-    %p.data {{listed_count}}
-  .span2
-    %p.dataTitle Listed
+  .span2.data {{listed_count}}
+  .span2.dataTitle Listed
 
 %header
-  %h1 @{{screen_name}}
+  %h1
+    %a{:href => 'https://twitter.com/#!/{{screen_name}}'}
+      @{{screen_name}}

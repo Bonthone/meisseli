@@ -9,8 +9,9 @@ define([
   'views/edit',
   'views/twitter',
   'views/github',
+  'views/stackoverflow',
   'views/footer'
-], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, TwitterView, GitHubView, FooterView) {
+], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, TwitterView, GitHubView, StackOverFlowView, FooterView) {
 
 	var initialize = function() {
     if ($('#index').length != 0) {
