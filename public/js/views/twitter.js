@@ -6,13 +6,13 @@ define([
   'text!/templates/twitter.html'
 ], function($, _, Backbone, models, template_text) {
 
-  var template = Handlebars.compile(template_text);
+var template = Handlebars.compile(template_text);
 
 var TwitterView = Backbone.View.extend({
 
-  initialize: function() {
+  initialize: function(options) {
     _.bindAll(this, 'render', 'printModel');
-    this.model = new models.TwitterProfile({screen_name: "twitterapi"});
+    this.model = new models.TwitterProfile({screen_name: options.identifier});
     this.model.fetch({success: this.printModel});
   },
 

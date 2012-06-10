@@ -26,7 +26,7 @@ define([
       $('#view').html(view.el);
     }
     if ($('#edit').length != 0) {
-      var view = new EditView().render();
+      var view = new EditView();
       $('#edit').html(view.el);
     }    
     new FooterView({el: $('footer')});
