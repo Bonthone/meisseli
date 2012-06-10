@@ -1,18 +1,15 @@
-%script{ :id => "twitter", :type => "text/x-handlebars-template" }
-  %header @{{screen_name}}
-
-  .followers
-    %p.dataTitle Followers
+.row.followers
+  .span2
     %p.data {{followers_count}}
+  .span2
+    %p.dataTitle Followers
 
-  .listed 
-    %p.dataTitle Listed
+
+.row.listed
+  .span2
     %p.data {{listed_count}}
-        
-  .statuses 
-    %p.dataTitle Status Count
-    %p.data {{statuses_count}}
+  .span2
+    %p.dataTitle Listed
 
-  .retweeted 
-    %p.dataTitle Retweet Count
-    %p.data {{retweet_count}}
+%header
+  %h1 @{{screen_name}}

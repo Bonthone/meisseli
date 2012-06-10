@@ -1,3 +1,7 @@
+body {
+	padding-bottom: 50px;
+}
+
 header h1 {
 	margin-bottom: 9px;
 	font-size: 81px;
@@ -7,7 +11,8 @@ header h1 {
 }
 
 .tile {
-	height: 220px;
+	height: 300px;
+	width: 300px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	position: relative;
@@ -20,6 +25,37 @@ header h1 {
 	opacity: 0.3;
 	-moz-opacity: 0.3;
 	filter:alpha(opacity=3);
+	z-index:-1;
+
+	width:300px;
+	height:300px;
+}
+
+.tile .row p {
+	line-height: 50px;
+	vertical-align: middle;
+}
+
+.tile header {
+	position: absolute;
+	bottom:0px;
+	right:0px;
+}
+
+.tile header h1{
+	text-align: right;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.tile .dataTitle {
+}
+
+.tile .data {
+	text-align: right;
+	font-size: 40px;
+	font-weight: bold;
+	letter-spacing: -1px;
 }
 
 .controls {

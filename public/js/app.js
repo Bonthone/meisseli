@@ -7,8 +7,10 @@ define([
   'views/signup',
   'views/view',
   'views/edit',
+  'views/twitter',
+  'views/github'
   'views/footer'
-], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, FooterView) {
+], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, TwitterView, GitHubView, FooterView) {
 
 	var initialize = function() {
     if ($('#index').length != 0) {
@@ -27,6 +29,19 @@ define([
       $('#edit').html(view.el);
     }    
     new FooterView({el: $('footer')});
+		// Services
+		if ($('.tile.twitter').length != 0) {
+		  var view = new TwitterView().render();
+		  $('.tile.twitter .content').html(view.el);
+		}
+		if ($('.tile.github').length != 0) {
+		  var view = new GitHubView().render();
+		  $('.tile.github .content').html(view.el);
+		}
+		if ($('.tile.stackoverflow').length != 0) {
+		  var view = new StackOverFlowView().render();
+		  $('.tile.stackoverflow .content').html(view.el);
+		}
 	};
   
   return {
