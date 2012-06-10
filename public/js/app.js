@@ -10,8 +10,9 @@ define([
   'views/twitter',
   'views/github',
   'views/stackoverflow',
+  'views/reddit',
   'views/footer'
-], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, TwitterView, GitHubView, StackOverFlowView, FooterView) {
+], function($, _, Backbone, Handlebars, IndexView, SignUpView, ViewingView, EditView, TwitterView, GitHubView, StackOverFlowView, RedditView, FooterView) {
 
 	var initialize = function() {
     if ($('#index').length != 0) {
@@ -41,6 +42,10 @@ define([
 		if ($('.tile.stackoverflow').length != 0) {
 		  var view = new StackOverFlowView().render();
 		  $('.tile.stackoverflow .content').html(view.el);
+		}
+		if ($('.tile.reddit').length != 0) {
+		  var view = new RedditView().render();
+		  $('.tile.reddit .content').html(view.el);
 		}
 	};
   

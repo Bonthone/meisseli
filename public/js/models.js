@@ -55,10 +55,22 @@ function($, _, Backbone) {
     }
   });
 
+  var RedditProfile = Model.extend({
+    user_id: 'nixonrichard',
+    url: function() {
+      return 'http://www.reddit.com/user/'+this.user_name+'/about.json?jsonp=?';
+    },
+    initialize: function(options) {
+      _.bindAll(this, 'url');
+      this.user_name = options.user_name;
+    }
+  });
+
   return {
     TwitterProfile: TwitterProfile,
     GitHubProfile: GitHubProfile,
-    StackOverFlowProfile: StackOverFlowProfile
+    StackOverFlowProfile: StackOverFlowProfile,
+    RedditProfile: RedditProfile
   };
 
 });

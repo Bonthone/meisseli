@@ -1,0 +1,14 @@
+{{#with data}}
+.row.linkkarma
+  .span2.data {{link_karma}}
+  .span2.dataTitle Link karma
+
+.row.commentkarma
+  .span2.data {{comment_karma}}
+  .span2.dataTitle Comment karma
+
+%header
+  %h1
+    %a{:href => 'http://www.reddit.com/user/{{name}}'}
+      {{name}}
+{{/with}}
