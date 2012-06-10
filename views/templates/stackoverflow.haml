@@ -3,9 +3,11 @@
   .span2.data {{reputation}}
   .span2.dataTitle Reputation
 
-.row.following
+{{#if accept_rate}}
+.row.acceptrate
   .span2.data {{accept_rate}}
   .span2.dataTitle Accept rate
+{{/if}}
 
 .row.badgenames
   .span1.dataTitle gold
