@@ -1,14 +1,21 @@
-%h2 {{user_name}}
 {{#with user}}
+.row.followers
+  .span2
+    %p.data {{followers_count}}
+  .span2
+    %p.dataTitle Followers
 
-.followers
-  %p.dataTitle Followers
-  %p.data {{followers_count}}
-.following 
-  %p.dataTitle Following
-  %p.data {{following_count}}
+.row.following
+  .span2
+    %p.data {{following_count}}
+  .span2
+    %p.dataTitle Following
       
-.repoCount 
-  %p.dataTitle Repo Count
-  %p.data {{public_repo_count}}
+.row.repoCount 
+  .span2
+    %p.data {{public_repo_count}}
+  .span2
+    %p.dataTitle Repositories
 {{/with}}
+%header
+  %h1 {{user_name}}
