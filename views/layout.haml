@@ -10,8 +10,8 @@
     = haml :templates
   %body
     %header
-      %h1 Meisseli
+      = haml :header
     #content.container
       = yield
     %footer
-      %h5 Build it
+      = haml :footer
