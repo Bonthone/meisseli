@@ -1,8 +1,0 @@
-%h1= "#{locals[:name]}"
-#user
-  - [%w(github twitter stackoverflow), %w(linkedin soundcloud reddit)].each do |pack|
-    .row
-      - pack.each do |service|
-        .tile.span4{:class => service}
-          .content
-          %img.bg(src = '/img/services/#{service}.png' alt = service)

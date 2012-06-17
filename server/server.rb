@@ -35,7 +35,7 @@ class Meisseli < Sinatra::Base
 	end
 
 	get '/:name' do |name|
-		haml :user, :layout => :layout, :locals => {:name => name}
+		redirect '/view/'+name
 	end
 
 	# These serve json == REST API
