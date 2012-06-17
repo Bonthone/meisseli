@@ -1,17 +1,17 @@
-{{#with user}}
+{{#with data}}
 .row.followers
-  .span2.data {{followers_count}}
+  .span2.data {{followers}}
   .span2.dataTitle Followers
 
 .row.following
-  .span2.data {{following_count}}
+  .span2.data {{following}}
   .span2.dataTitle Following
       
 .row.repoCount 
-  .span2.data {{public_repo_count}}
+  .span2.data {{public_repos}}
   .span2.dataTitle Repositories
-{{/with}}
 %header
   %h1
-    %a{:href => 'https://github.com/{{user_name}}'}
-      {{user_name}}
+    %a{:href => '{{html_url}}'}
+      {{login}}
+{{/with}}

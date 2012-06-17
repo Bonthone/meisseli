@@ -38,7 +38,7 @@ function($, _, Backbone) {
   var GitHubProfile = Model.extend({
     user_name: 'defunkt',
     url: function() {
-      return 'http://github.com/api/v2/json/user/show/'+this.user_name;
+      return 'https://api.github.com/users/'+this.user_name+'?callback=callback';
     },
     initialize: function(options) {
       _.bindAll(this, 'url');
